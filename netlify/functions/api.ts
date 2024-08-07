@@ -52,7 +52,9 @@ router.post('/update-user', (req: Request, res: Response) => {
 
 router.put('/create-user', (req: Request, res: Response) => {
 	const {  first_name, last_name, email, avatar } = req.body;
-  data.push({ id: data.length + 1, first_name, last_name, email, avatar });
+  // get higher id from data and add 1
+
+  data.push({ id: data.map((user: any) => user.id).sort().reverse()[0] + 1 , first_name, last_name, email, avatar });
 	res.json({ message: 'Data updated successfully', data: data });
 });
 
