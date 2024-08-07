@@ -8,5 +8,4 @@
   to = "/.netlify/functions/api/:splat"
 [build]
   command = "echo Building Functions"
-  publish = "public"
   functions = "netlify/functions"
